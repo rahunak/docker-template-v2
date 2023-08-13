@@ -1,4 +1,4 @@
-index
+
 <?php
 
 $request = $_SERVER['REQUEST_URI'];
@@ -7,13 +7,15 @@ switch ($request) {
         require __DIR__ . '/views/home.php';
         break;
     case '/users':
-       require __DIR__ . '/users.php';
+       require __DIR__ . '/views/users.php';
        break;
        
-    case '/404':
+    default:
       http_response_code(404);
       require __DIR__ . '/views/404.php';
-      break;
 }
-$test ='';
 
+
+include ('./regions/head.php');
+include ('./regions/header.php');
+include ('./regions/footer.php');
